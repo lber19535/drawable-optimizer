@@ -1,7 +1,7 @@
 
-def pluginVersion = '1.0.5'
+def pluginVersion = '1.0.7'
 
-group 'org.fabiomsr'
+group 'com.github.lber19535'
 version pluginVersion
 
 buildscript {
@@ -104,7 +104,7 @@ bintray {
             name = pluginVersion
             desc = 'Drawable Optimizer Gradle Plugin'
             vcsTag = pluginVersion
-            attributes = ['gradle-plugin': 'org.fabiomsr:drawable-optimizer-gradle-plugin']
+            attributes = ['gradle-plugin': 'com.github.lber19535:drawable-optimizer-gradle-plugin']
         }
     }
 

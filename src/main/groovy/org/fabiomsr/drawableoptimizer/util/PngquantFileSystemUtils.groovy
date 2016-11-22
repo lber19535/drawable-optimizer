@@ -8,37 +8,37 @@ import org.gradle.api.Project
  */
 class PngquantFileSystemUtils {
 
-    static def getZopfliDirectory(Project project){
-        return new File(getZopfliDirectoryPath(project))
+    static def getPngquantfliDirectory(Project project){
+        return new File(getPngquantfliDirectoryPath(project))
     }
 
-    static def getZopfliFilename(Project project){
+    static def getPngquantfliFilename(Project project){
         return Os.isFamily(Os.FAMILY_WINDOWS) ? 'pngquant.exe' : 'zopflipng'
     }
 
-    static def getZopfliFilePath(Project project){
-        return getZopfliDirectoryPath(project) + File.separator + getZopfliFilename(project)
+    static def getPngquantfliFilePath(Project project){
+        return getPngquantfliDirectoryPath(project) + File.separator + getPngquantfliFilename(project)
     }
 
-    private static def getZopfliDirectoryPath(Project project){
+    private static def getPngquantfliDirectoryPath(Project project){
         return project.buildDir.absolutePath + File.separator + 'pngquant'
     }
 
-    static def copyZopfliToBuildFolder(Project project) {
-        def zopfliFileDir = getZopfliDirectory(project)
-        if(!zopfliFileDir.exists()) {
-            zopfliFileDir.mkdirs()
+    static def copyPngquantfliToBuildFolder(Project project) {
+        def pngquantfliFileDir = getPngquantfliDirectory(project)
+        if(!pngquantfliFileDir.exists()) {
+            pngquantfliFileDir.mkdirs()
 
-            def zopfliFilename = getZopfliFilename(project)
-            def zopfliFile = new File(getZopfliFilePath(project))
+            def pngquantfliFilename = getPngquantfliFilename(project)
+            def pngquantfliFile = new File(getPngquantfliFilePath(project))
 
-            new FileOutputStream(zopfliFile).withStream {
-                def zopfliResource = "/pngquant/$zopfliFilename"
-                def stream = PngquantFileSystemUtils.class.getResourceAsStream(zopfliResource)
+            new FileOutputStream(pngquantfliFile).withStream {
+                def pngquantfliResource = "/pngquant/$pngquantfliFilename"
+                def stream = PngquantFileSystemUtils.class.getResourceAsStream(pngquantfliResource)
                 it.write(stream.getBytes())
             }
 
-            zopfliFile.setExecutable(true)
+            pngquantfliFile.setExecutable(true)
         }
     }
 }

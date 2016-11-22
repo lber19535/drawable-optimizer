@@ -1,6 +1,7 @@
 package org.fabiomsr.drawableoptimizer.optimizer.impl
 
 import org.fabiomsr.drawableoptimizer.optimizer.Optimizer
+import org.fabiomsr.drawableoptimizer.util.PngquantFileSystemUtils
 import org.fabiomsr.drawableoptimizer.util.ZopfliFileSystemUtils
 import org.gradle.api.Project
 
@@ -12,7 +13,9 @@ class PngquantOptimizer implements Optimizer {
     @Override
     void optimize(Project project, int compressionLevel, int iterations, String logLevel, File[] files) {
 
-        ZopfliFileSystemUtils.copyZopfliToBuildFolder(project)
+        PngquantFileSystemUtils.copyPngquantfliToBuildFolder(project)
+
+        print("use Pngquant optimizer")
 
         files.each {
             def originalFileSize = it.length()
@@ -27,7 +30,7 @@ class PngquantOptimizer implements Optimizer {
                     (originalFileSize - optimizedFileSize) : -(optimizedFileSize - originalFileSize);
 
             if (logLevel == "debug" || logLevel == "info") {
-                printf("%5.2f%% :%6dB ->%6dB (%5dB saved) - %s\n",
+                printf("%5.2f%% :%6dB ->%6dB (%5dB saved) -- %s\n",
                         fileSizeDifference / Float.valueOf(originalFileSize) * 100,
                         originalFileSize, optimizedFileSize, fileSizeDifference, it.absolutePath);
             }

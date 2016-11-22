@@ -1,5 +1,6 @@
 package org.fabiomsr.drawableoptimizer.optimizer
 
+import org.fabiomsr.drawableoptimizer.optimizer.impl.PngquantOptimizer
 import org.fabiomsr.drawableoptimizer.optimizer.impl.PngtasticOptimizer
 import org.fabiomsr.drawableoptimizer.optimizer.impl.ZopfliOptimizer
 
@@ -14,7 +15,7 @@ enum OptimizerFactory {
     private OptimizerFactory() {
         optimizers = [(OptimizerConstants.PNGTASTIC): new PngtasticOptimizer(),
                       (OptimizerConstants.ZOPFLI)   : new ZopfliOptimizer(),
-                      (OptimizerConstants.PNGQUANT)   : new PngtasticOptimizer()]
+                      (OptimizerConstants.PNGQUANT)   : new PngquantOptimizer()]
     }
 
     def Optimizer getOptimizer(def optimizerType){

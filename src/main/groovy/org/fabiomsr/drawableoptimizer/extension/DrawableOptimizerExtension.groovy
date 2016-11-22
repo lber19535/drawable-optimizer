@@ -12,7 +12,7 @@ class DrawableOptimizerExtension {
     /**
      * The optimizer
      */
-    def optimizer = OptimizerConstants.ZOPFLI
+    def optimizer = OptimizerConstants.PNGQUANT
 
     /**
      * The compression level; 0-9 allowed. Default is to try them all by brute force (useful for pngtastic compressor)
@@ -33,4 +33,6 @@ class DrawableOptimizerExtension {
      * Execute only on release build
      */
     def onlyOnRelease = false
+
+
 }
