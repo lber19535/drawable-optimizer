@@ -8,6 +8,7 @@ class OptimizerConstants {
     // Compressors
     public static String PNGTASTIC = 'pngtastic'
     public static String ZOPFLI = 'zopfli'
+    public static String PNGQUANT = 'pngquant'
 
 
     public static int DEFAULT_ITERATIONS = 15;

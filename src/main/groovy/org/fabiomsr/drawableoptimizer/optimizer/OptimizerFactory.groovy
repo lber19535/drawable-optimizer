@@ -13,7 +13,8 @@ enum OptimizerFactory {
 
     private OptimizerFactory() {
         optimizers = [(OptimizerConstants.PNGTASTIC): new PngtasticOptimizer(),
-                      (OptimizerConstants.ZOPFLI)   : new ZopfliOptimizer()]
+                      (OptimizerConstants.ZOPFLI)   : new ZopfliOptimizer(),
+                      (OptimizerConstants.PNGQUANT)   : new PngtasticOptimizer()]
     }
 
     def Optimizer getOptimizer(def optimizerType){
