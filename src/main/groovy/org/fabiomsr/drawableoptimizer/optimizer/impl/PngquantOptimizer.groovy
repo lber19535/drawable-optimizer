@@ -20,7 +20,7 @@ class PngquantOptimizer implements Optimizer {
             def originalFileSize = it.length()
 
             def quantfliPath = PngquantFileSystemUtils.getPngquantfliFilePath(project)
-            Process process = new ProcessBuilder(quantfliPath, "--ext ", it.absolutePath).start()
+            Process process = new ProcessBuilder(quantfliPath, "-f --ext \".png\" ", it.absolutePath).start()
             process.waitFor();
 
             def optimizedFileSize = new File(it.absolutePath).length()
