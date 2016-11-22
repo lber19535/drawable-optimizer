@@ -1,5 +1,5 @@
 
-def pluginVersion = '1.0.12'
+def pluginVersion = '1.0.13'
 
 group 'com.github.lber19535'
 version pluginVersion
