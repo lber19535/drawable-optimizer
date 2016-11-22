@@ -1,3 +1,18 @@
+[![](https://jitpack.io/v/lber19535/drawable-optimizer.svg)](https://jitpack.io/#lber19535/drawable-optimizer)
+
+Add [Pngquant](https://pngquant.org/)
+
+```groovy
+drawableOptimizer {
+    optimizer = 'pngquant'
+    compressionLevel = 9   // in pngquant mode, I dont't release this parameter
+    iterations = 15        // in pngquant mode, I dont't release this parameter
+    onlyOnRelease = false
+    logLevel = 'info'
+}
+```
+
+
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-drawable--optimizer-green.svg?style=true)](https://android-arsenal.com/details/1/3586)
 
 Drawable Optimizer
