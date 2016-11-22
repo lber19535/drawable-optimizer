@@ -1,16 +1,11 @@
 package org.fabiomsr.drawableoptimizer
 
 import com.android.build.gradle.api.BaseVariant
-import org.apache.tools.ant.taskdefs.condition.Os
 import org.fabiomsr.drawableoptimizer.extension.DrawableOptimizerExtension
-import org.fabiomsr.drawableoptimizer.optimizer.OptimizerConstants
 import org.fabiomsr.drawableoptimizer.task.DrawableOptimizerTask
-import org.fabiomsr.drawableoptimizer.util.ZopfliFileSystemUtils
 import org.gradle.api.DomainObjectCollection
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-
-import java.nio.file.Files
 
 /**
  *  Created by fabio on 12/3/16.

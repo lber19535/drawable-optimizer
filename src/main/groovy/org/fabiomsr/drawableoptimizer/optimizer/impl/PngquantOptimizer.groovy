@@ -2,7 +2,6 @@ package org.fabiomsr.drawableoptimizer.optimizer.impl
 
 import org.fabiomsr.drawableoptimizer.optimizer.Optimizer
 import org.fabiomsr.drawableoptimizer.util.PngquantFileSystemUtils
-import org.fabiomsr.drawableoptimizer.util.ZopfliFileSystemUtils
 import org.gradle.api.Project
 
 /**
@@ -20,7 +19,7 @@ class PngquantOptimizer implements Optimizer {
         files.each {
             def originalFileSize = it.length()
 
-            def quantfliPath = ZopfliFileSystemUtils.getZopfliFilePath(project)
+            def quantfliPath = PngquantFileSystemUtils.getPngquantfliFilePath(project)
             Process process = new ProcessBuilder(quantfliPath, "--ext ", it.absolutePath).start()
             process.waitFor();
 
